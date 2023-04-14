@@ -1,6 +1,12 @@
+using Baby_goods.BL.Services;
+using Baby_goods.Common.Interfaces;
+using Baby_goods.DAL.Memory;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IHomeService, HomeService>();
+builder.Services.AddScoped<IHomeRepository, HomeRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

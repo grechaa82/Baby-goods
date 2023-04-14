@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Baby-goods.Common\Baby-goods.Common.csproj" />
+  </ItemGroup>
+
 </Project>
