@@ -4,13 +4,11 @@ namespace Baby_goods.DAL.Memory
 {
     public class SearchRepository : ISearchRepository
     {
-        HomeRepository HomeRepository { get; set; }
-
         public async Task<List<Product>> GetAllByArticle(string query)
         {
             if (Product.TryFormatArticle(query, out string formattedArticle))
             {
-                var result = HomeRepository._products.Where(p => p.Article ==  formattedArticle).ToList();
+                var result = FakeData.product.Where(p => p.Article ==  formattedArticle).ToList();
 
                 return result;
             }
@@ -20,7 +18,7 @@ namespace Baby_goods.DAL.Memory
 
         public async Task<List<Product>> GetAllByTitle(string query)
         {
-            var result = HomeRepository._products.Where(p => p.Title.Contains(query, StringComparison.InvariantCultureIgnoreCase)).ToList();
+            var result = FakeData.product.Where(p => p.Title.Contains(query, StringComparison.InvariantCultureIgnoreCase)).ToList();
 
             return result;
         }
