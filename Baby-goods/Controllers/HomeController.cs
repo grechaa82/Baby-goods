@@ -17,8 +17,19 @@ namespace Baby_goods.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var products = await _homeService.Get();
+            var pageIndex = 0;
+            var pageSize = 20;
+
+            var products = await _homeService.Get(0, 20);
             
+            return Ok(products);
+        }
+
+        [HttpGet("/{pageIndex:int}/{pageSize:int}")]
+        public async Task<IActionResult> Get(int pageIndex, int pageSize)
+        {
+            var products = await _homeService.Get(pageIndex, pageSize);
+
             return Ok(products);
         }
     }

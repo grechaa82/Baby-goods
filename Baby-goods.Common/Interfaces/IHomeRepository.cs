@@ -2,6 +2,6 @@
 {
     public interface IHomeRepository
     {
-        Task<List<Product>> Get();
+        Task<List<Product>> Get(int pageIndex, int pageSize);
     }
 }

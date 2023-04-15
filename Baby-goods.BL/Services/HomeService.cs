@@ -11,9 +11,9 @@ namespace Baby_goods.BL.Services
             _homeRepository = homeRepository;
         }
 
-        public async Task<List<Product>> Get()
+        public async Task<List<Product>> Get(int pageIndex, int pageSize)
         {
-            return await _homeRepository.Get();
+            return await _homeRepository.Get(pageIndex, pageSize);
         }
     }
 }
