@@ -1,9 +1,12 @@
-﻿public class Product
+﻿using System.Text.RegularExpressions;
+
+public class Product
 {
     public Guid Id { get; }
     public Category Category { get; private set; }
     public string Title { get; }
     public string Summary { get; }
+    public string Article { get; private set; }
     public string ImageUrl { get; private set; }
     public decimal Price { get; private set; }
     public DateTime CreatedAt { get; }
@@ -15,7 +18,8 @@
         string summary, 
         string imageUrl, 
         decimal price,
-        Guid id = new Guid())
+        Guid id = new Guid(),
+        string article = "")
     {
         if (category == null)
         {
@@ -41,6 +45,7 @@
         Category = category;
         Title = title;
         Summary = summary;
+        Article = article;
         ImageUrl = imageUrl;
         Price = price;
         CreatedAt = DateTime.UtcNow;
@@ -71,5 +76,34 @@
         }
         Price = price;
         ModifiedAt = DateTime.UtcNow;
+    }
+
+    public void SetArticle(string newArticle)
+    {
+        if (!string.IsNullOrWhiteSpace(newArticle))
+        {
+            throw new ArgumentNullException($"'{nameof(newArticle)}' connot be null.");
+        }
+        if (newArticle[0] != '#')
+        {
+            throw new ArgumentException($"'{nameof(newArticle)}' must start with '#'.");
+        }
+        Article = newArticle;
+        ModifiedAt = DateTime.UtcNow;
+    }
+
+    public static bool IsArticle(string article) => TryFormatArticle(article, out _);
+
+    public static bool TryFormatArticle(string article, out string formattedArticle)
+    {
+        if (string.IsNullOrWhiteSpace(article))
+        {
+            formattedArticle = null;
+            return false;
+        }
+
+        formattedArticle = article.Replace("-", "").Replace(" ", "");
+
+        return Regex.IsMatch(formattedArticle, @"^#\d{8}$");
     }
 }
