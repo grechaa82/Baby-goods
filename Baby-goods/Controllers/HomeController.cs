@@ -25,7 +25,7 @@ namespace Baby_goods.Controllers
             return Ok(products);
         }
 
-        [HttpGet("/{pageIndex:int}/{pageSize:int}")]
+        [HttpGet("{pageIndex:int}/{pageSize:int}")]
         public async Task<IActionResult> Get(int pageIndex, int pageSize)
         {
             var products = await _homeService.Get(pageIndex, pageSize);
