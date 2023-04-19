@@ -11,25 +11,33 @@ namespace Baby_goods.DAL.Memory
             return result;
         }
 
-        public async Task<List<Product>> GetByCategory(string category)
+        public async Task<Product> GetByArticle(string article)
         {
-            var result = FakeData.product.Where(p => p.Category.Name == category).ToList();
-            
+            var result = FakeData.product.FirstOrDefault(p => p.Article == article);
+
+            if (result == null)
+            {
+                throw new ArgumentNullException($"According to this '{nameof(article)}' the product was not found.");
+            }
+
             return result;
         }
 
-        public async Task<List<Product>> GetByPriceRange(int[] prices)
+        public async Task<List<Product>> GetByFilter(string? category, int[]? prices)
         {
-            var result = FakeData.product.Where(p => p.Price >= prices[0] && p.Price <= prices[1]).ToList();
+            var result = FakeData.product.AsQueryable();
 
-            return result;
-        }
+            if (category != null && !string.IsNullOrWhiteSpace(category))
+            {
+                result = result.Where(p => p.Category.Name == category);
+            }
 
-        public async Task<List<Product>> GetProducts()
-        {
-            var result = FakeData.product.ToList();
+            if (prices != null && prices.Any())
+            {
+                result = result.Where(p => p.Price >= prices[0] && p.Price <= prices[1]);
+            }
 
-            return result;
+            return result.ToList();
         }
     }
 }

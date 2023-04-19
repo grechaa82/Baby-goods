@@ -16,37 +16,31 @@ namespace Baby_goods.BL.Services
             return await _productRepository.GetById(id);
         }
 
-        public async Task<List<Product>> GetByCategory(string category)
+        public async Task<Product> GetByArticle(string article)
         {
-            return await _productRepository.GetByCategory(category);
-        }
-
-        public async Task<List<Product>> GetByPriceRange(string priceRange)
-        {
-            var prices = GetPricesByPriceRange(priceRange);
-            return await _productRepository.GetByPriceRange(prices);
+            return await _productRepository.GetByArticle(article);
         }
 
         public async Task<List<Product>> GetByFilter(string? category, string? price)
         {
-            var products = await _productRepository.GetProducts();
+            int[] prices;
+            List<Product> products = new();
 
-            if (category != null && !string.IsNullOrWhiteSpace(category))
+            try
             {
-                products = products.Where(p => p.Category.Name == category).ToList();
+                prices = TryParsePricesByPriceRange(price);
+            }
+            catch (FormatException)
+            {
+                throw new FormatException ($"'{nameof(price)}' сould not convert to a number.");
             }
 
-            if (price != null && price.Any())
-            {
-                var prices = GetPricesByPriceRange(price);
+            products = await _productRepository.GetByFilter(category, prices);
 
-                products = products.Where(p => p.Price >= prices[0] && p.Price <= prices[1]).ToList();
-            }
-
-            return products.ToList();
+            return products;
         }
 
-        private int[] GetPricesByPriceRange(string price)
+        private int[] TryParsePricesByPriceRange(string price)
         {
             string[] parts = price.Split('-');
             var firstPrice = int.Parse(parts[0]);

@@ -22,19 +22,16 @@ namespace Baby_goods.Controllers
             return Ok(result);
         }
 
-        [HttpGet("priceRange/{priceRange}")]
-        public async Task<IActionResult> GetProductsByPriceRange(string priceRange)
+        [HttpGet("article/{article}")]
+        public async Task<IActionResult> GetProductByArticle(string article)
         {
-            var result = await _productService.GetByPriceRange(priceRange);
+            if (!Product.IsArticle(article))
+            {
+                return BadRequest();
+            }
 
-            return Ok(result);
-        }
-
-        [HttpGet("category/{category}")]
-        public async Task<IActionResult> GetProductsByCategory(string category)
-        {
-            var result = await _productService.GetByCategory(category);
-
+            var result = await _productService.GetByArticle(article);
+            
             return Ok(result);
         }
 

@@ -3,8 +3,7 @@
     public interface IProductRepository
     {
         Task<Product> GetById(string id);
-        Task<List<Product>> GetByPriceRange(int[] prices);
-        Task<List<Product>> GetByCategory(string cagetory);
-        Task<List<Product>> GetProducts();
+        Task<Product> GetByArticle(string id);
+        Task<List<Product>> GetByFilter(string? category, int[]? prices);
     }
 }
