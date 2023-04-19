@@ -17,7 +17,7 @@ namespace Baby_goods.Controllers
         [HttpGet]
         public async Task<IActionResult> Index(string query)
         {
-            return Ok(_searchService.GetAllByQueryAsync(query));
+            return Ok(await _searchService.GetAllByQueryAsync(query));
         }
     }
 }

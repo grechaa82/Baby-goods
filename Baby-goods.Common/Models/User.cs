@@ -44,11 +44,6 @@
             throw new ArgumentException($"'{nameof(phone)}' cannot be null or empty.", nameof(phone));
         }
 
-        if (role == null)
-        {
-            throw new ArgumentNullException($"'{nameof(role)}' connot be null.");
-        }
-
         Id = id;
         Username = username;
         Password = password;
@@ -84,11 +79,6 @@
 
     public void SetRole(Role role)
     {
-        if (role == null)
-        {
-            throw new ArgumentNullException($"'{nameof(role)}' connot be null.");
-        }
-
         Role = role;
         ModifiedAt = DateTime.UtcNow;
     }

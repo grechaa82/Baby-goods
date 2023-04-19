@@ -20,7 +20,7 @@ namespace Baby_goods.Controllers
             var pageIndex = 0;
             var pageSize = 20;
 
-            var products = await _homeService.Get(0, 20);
+            var products = await _homeService.Get(pageIndex, pageSize);
             
             return Ok(products);
         }
