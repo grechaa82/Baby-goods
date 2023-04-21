@@ -42,6 +42,7 @@ namespace Baby_goods.BL.Services
 
         private int[] TryParsePricesByPriceRange(string price)
         {
+            //TODO: Вылетает NullReferenceException, если не передались значение priceRange
             string[] parts = price.Split('-');
             var firstPrice = int.Parse(parts[0]);
             var secondPrice = int.Parse(parts[1]);

@@ -1,25 +1,18 @@
-﻿namespace Baby_goods.DAL.Memory
+﻿using Baby_goods.Common.Models;
+
+namespace Baby_goods.DAL.Memory
 {
     internal class FakeData
     {
-        private static readonly Guid[] guids = new[]
+        public static readonly List<Category> category = new()
         {
-            new Guid(),
-            new Guid(),
-            new Guid(),
-            new Guid(),
-            new Guid()
+            new Category("Передвижение", Guid.Parse("DFB8E7B8-B7AE-47D0-8F18-B321CCF0AE67"), null),
+            new Category("Остальное", Guid.Parse("E3D02EBD-D171-46C3-BFD5-1986991B74E1"), null),
+            new Category("Коляска", Guid.Parse("5FF7065F-9711-49A0-A669-F54C43A135CF"), Guid.Parse("DFB8E7B8-B7AE-47D0-8F18-B321CCF0AE67")),
+            new Category("Велики", Guid.Parse("42A7EF40-2C55-48A0-90C8-0265E9FFDEE7"), Guid.Parse("DFB8E7B8-B7AE-47D0-8F18-B321CCF0AE67")),
         };
 
-        public static readonly Category[] category = new[]
-        {
-            new Category("Передвижение", guids[0], null),
-            new Category("Остальное", guids[1], null),
-            new Category("Коляска", guids[2], guids[0]),
-            new Category("Велики", guids[3], guids[0]),
-        };
-
-        public static readonly Product[] product = new[]
+        public static readonly List<Product> product = new()
         {
             new Product(
                 category[2],
@@ -64,6 +57,17 @@
                 2_190,
                 Guid.Parse("77FDCB2C-9F51-458B-B23B-5858129EE0B8"),
                 "#00000005"),
+        };
+
+        public static readonly List<User> user = new()
+        {
+            new User("Антонyc", "PSD", "Антон", "Назаров", "79998887766", Role.Customer, Guid.Parse("15A4937C-076D-4A30-9B3A-B745B87F68E0"))
+        };
+
+        public static readonly List<ShoppingCartItem> shoppingCartItem = new()
+        {
+            new ShoppingCartItem(user[0].Id, product[0], Guid.Parse("5E9F171E-0374-40D1-90CA-A240D974973E"), 2),
+            new ShoppingCartItem(user[0].Id, product[1], Guid.Parse("FC2DC133-D902-4257-866B-6D6B47C2084D"))
         };
     }
 }
