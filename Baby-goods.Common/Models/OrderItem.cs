@@ -3,15 +3,15 @@
     public Guid Id { get; }
     public Order Order { get; }
     public Product Product { get; }
-    public int Quantity { get; private set; }
+    public int Quantity { get; }
     public decimal Price { get; }
     public DateTime CreatedAt { get; }
-    public DateTime ModifiedAt { get; private set; }
 
     public OrderItem(
         Order order, 
         Product product, 
         int quantity,
+        decimal price,
         Guid id = new Guid())
     {
         if (order == null)
@@ -33,24 +33,7 @@
         Order = order;
         Product = product;
         Quantity = quantity;
-        Price = CalculatePrice();
+        Price = price;
         CreatedAt = DateTime.UtcNow;
-        ModifiedAt = DateTime.UtcNow;
-    }
-
-    public void SetQuantity(int quantity)
-    {
-        if (quantity <= 0)
-        {
-            throw new ArgumentOutOfRangeException($"'{nameof(quantity)}' cannot be zero or less.");
-        }
-
-        Quantity = quantity;
-        ModifiedAt = DateTime.UtcNow;
-    }
-
-    public decimal CalculatePrice()
-    {
-        return Product.Price * Quantity;
     }
 }
