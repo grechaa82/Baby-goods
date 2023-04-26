@@ -2,6 +2,7 @@
 {
     public Guid Id { get; }
     public string Username { get; private set; }
+    public string Email { get; private set; }
     public string Password { get; private set; }
     public string FirstName { get; }
     public string LastName { get; }
@@ -11,17 +12,23 @@
     public DateTime ModifiedAt { get; private set; }
 
     public User(
-        string username, 
+        string username,
+        string email,
         string password, 
         string firstName, 
         string lastName, 
         string phone, 
-        Role role,
+        Role role = Role.Customer,
         Guid id = new Guid())
     {
         if (string.IsNullOrEmpty(username))
         {
             throw new ArgumentNullException($"'{nameof(username)}' connot be null.");
+        }
+
+        if (string.IsNullOrEmpty(email))
+        {
+            throw new ArgumentNullException($"'{nameof(email)}' connot be null.");
         }
 
         if (string.IsNullOrEmpty(password))
@@ -46,6 +53,7 @@
 
         Id = id;
         Username = username;
+        Email = email;
         Password = password;
         FirstName = firstName;
         LastName = lastName;

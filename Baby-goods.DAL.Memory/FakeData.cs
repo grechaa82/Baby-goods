@@ -61,7 +61,7 @@ namespace Baby_goods.DAL.Memory
 
         public static readonly List<User> user = new()
         {
-            new User("Антонyc", "PSD", "Антон", "Назаров", "79998887766", Role.Customer, Guid.Parse("15A4937C-076D-4A30-9B3A-B745B87F68E0"))
+            new User("Антонyc", "anton@gmail.com", "password", "Антон", "Назаров", "79998887766", Role.Customer, Guid.Parse("15A4937C-076D-4A30-9B3A-B745B87F68E0"))
         };
 
         public static readonly List<ShoppingCartItem> shoppingCartItem = new()
