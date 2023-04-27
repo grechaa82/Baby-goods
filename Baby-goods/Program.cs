@@ -1,8 +1,33 @@
 using Baby_goods.BL.Services;
 using Baby_goods.Common.Interfaces;
 using Baby_goods.DAL.Memory;
+using Baby_goods.Options;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+var configuration = builder.Configuration;
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = configuration["JwtOptions:Issuer"],
+        ValidAudience = configuration["JwtOptions:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JwtOptions:SecretKey"]))
+    };
+});
+
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("JwtOptions"));
 
 // Add services to the container.
 builder.Services.AddScoped<IHomeService, HomeService>();
@@ -35,6 +60,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

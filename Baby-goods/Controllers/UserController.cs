@@ -1,5 +1,4 @@
-﻿using Baby_goods.BL;
-using Baby_goods.Common.Interfaces;
+﻿using Baby_goods.Common.Interfaces;
 using Baby_goods.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,7 +20,7 @@ namespace Baby_goods.Controllers
         {
             if (request.Password != request.ConfirmPassword)
             {
-                return BadRequest("Passwords don't matchю.");
+                return BadRequest("Passwords don't match.");
             }
 
             var user = await _userService.GetByEmail(request.Email);
