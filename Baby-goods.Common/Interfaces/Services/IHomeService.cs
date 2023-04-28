@@ -1,4 +1,4 @@
-﻿namespace Baby_goods.Common.Interfaces
+﻿namespace Baby_goods.Common.Interfaces.Services
 {
     public interface IHomeService
     {

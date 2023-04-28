@@ -1,4 +1,4 @@
-﻿using Baby_goods.Common.Interfaces;
+﻿using Baby_goods.Common.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Baby_goods.Controllers

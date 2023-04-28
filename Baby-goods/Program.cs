@@ -1,5 +1,6 @@
 using Baby_goods.BL.Services;
-using Baby_goods.Common.Interfaces;
+using Baby_goods.Common.Interfaces.Repositories;
+using Baby_goods.Common.Interfaces.Services;
 using Baby_goods.DAL.Memory;
 using Baby_goods.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

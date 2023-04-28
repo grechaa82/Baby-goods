@@ -1,4 +1,4 @@
-﻿using Baby_goods.Common.Interfaces;
+﻿using Baby_goods.Common.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Baby_goods.Controllers
@@ -19,22 +19,6 @@ namespace Baby_goods.Controllers
         {
             await _orderService.Create(userId, addressId);
             return Ok();
-        }
-
-        [HttpGet("[Action]")]
-        public async Task<IActionResult> GetOrder()
-        {
-            var order = await _orderService.GetOrder();
-
-            return Ok(order);
-        }
-
-        [HttpGet("[Action]")]
-        public async Task<IActionResult> GetOrderItem()
-        {
-            var orderItems = await _orderService.GetOrderItem();
-
-            return Ok(orderItems);
         }
     }
 }

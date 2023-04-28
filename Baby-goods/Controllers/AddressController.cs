@@ -1,4 +1,4 @@
-﻿using Baby_goods.Common.Interfaces;
+﻿using Baby_goods.Common.Interfaces.Services;
 using Baby_goods.Contracts;
 using Microsoft.AspNetCore.Mvc;
 

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\danil\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\danil\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Baby-goods.-1729239636.00" t="ExcludeRecursive" />
+    <e p="C:\Users\danil\Documents\VisualStudio\grechaa82\Baby-Goods" t="IncludeFlat">
+      <e p="Baby-Goods" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="Baby-goods.API.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Contracts" t="Include">
+          <e p="AddressRequest.cs" t="Include" />
+          <e p="LoginRequest.cs" t="Include" />
+          <e p="UserRegistrationRequest.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="AddressController.cs" t="Include" />
+          <e p="AuthController.cs" t="Include" />
+          <e p="CategoryController.cs" t="Include" />
+          <e p="HomeController.cs" t="Include" />
+          <e p="OrderController.cs" t="Include" />
+          <e p="ProductController.cs" t="Include" />
+          <e p="SearchController.cs" t="Include" />
+          <e p="ShoppingCartController.cs" t="Include" />
+          <e p="UserController.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net7.0" t="Include">
+              <e p="Baby-goods.API.AssemblyInfo.cs" t="Include" />
+              <e p="Baby-goods.API.GlobalUsings.g.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Options" t="Include">
+          <e p="JwtOptions.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="WeatherForecast.cs" t="Include" />
+      </e>
+      <e p="Baby-goods.BL" t="IncludeRecursive">
+        <e p="Baby-goods.BL.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net7.0" t="Include">
+              <e p="Baby-goods.BL.AssemblyInfo.cs" t="Include" />
+              <e p="Baby-goods.BL.GlobalUsings.g.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Services" t="Include">
+          <e p="AddressService.cs" t="Include" />
+          <e p="CategoryService.cs" t="Include" />
+          <e p="HomeService.cs" t="Include" />
+          <e p="OrderService.cs" t="Include" />
+          <e p="ProductService.cs" t="Include" />
+          <e p="SearchService.cs" t="Include" />
+          <e p="ShoppingCartItemService.cs" t="Include" />
+          <e p="UserService.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Baby-goods.Common" t="IncludeRecursive">
+        <e p="Baby-goods.Common.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Interfaces" t="Include">
+          <e p="IAddressRepository.cs" t="Include" />
+          <e p="IAddressService.cs" t="Include" />
+          <e p="ICategoryRepository.cs" t="Include" />
+          <e p="ICategoryService.cs" t="Include" />
+          <e p="IHomeRepository.cs" t="Include" />
+          <e p="IHomeService.cs" t="Include" />
+          <e p="IOrderRepository.cs" t="Include" />
+          <e p="IOrderService.cs" t="Include" />
+          <e p="IProductRepository.cs" t="Include" />
+          <e p="IProductService.cs" t="Include" />
+          <e p="ISearchRepository.cs" t="Include" />
+          <e p="ISearchService.cs" t="Include" />
+          <e p="IShoppingCartItemRepository.cs" t="Include" />
+          <e p="IShoppingCartItemService.cs" t="Include" />
+          <e p="IUserRepository.cs" t="Include" />
+          <e p="IUserService.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Address.cs" t="Include" />
+          <e p="Category.cs" t="Include" />
+          <e p="Order.cs" t="Include" />
+          <e p="OrderItem.cs" t="Include" />
+          <e p="Product.cs" t="Include" />
+          <e p="Role.cs" t="Include" />
+          <e p="ShoppingCartItem.cs" t="Include" />
+          <e p="User.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net7.0" t="Include">
+              <e p="Baby-goods.Common.AssemblyInfo.cs" t="Include" />
+              <e p="Baby-goods.Common.GlobalUsings.g.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Baby-goods.DAL.Memory" t="IncludeRecursive">
+        <e p="AddressRepository.cs" t="Include" />
+        <e p="Baby-goods.DAL.Memory.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CategoryRepository.cs" t="Include" />
+        <e p="FakeData.cs" t="Include" />
+        <e p="HomeRepository.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net7.0" t="Include">
+              <e p="Baby-goods.DAL.Memory.AssemblyInfo.cs" t="Include" />
+              <e p="Baby-goods.DAL.Memory.GlobalUsings.g.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="OrderRepository.cs" t="Include" />
+        <e p="ProductRepository.cs" t="Include" />
+        <e p="SearchRepository.cs" t="Include" />
+        <e p="ShoppingCartItemRepository.cs" t="Include" />
+        <e p="UserRepository.cs" t="Include" />
+      </e>
+      <e p="Baby-goods.DAL.PostgreSQL" t="IncludeRecursive">
+        <e p="Baby-goods.DAL.PostgreSQL.csproj" t="IncludeRecursive" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class1.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="net7.0" t="Include">
+              <e p="Baby-goods.DAL.PostgreSQL.AssemblyInfo.cs" t="Include" />
+              <e p="Baby-goods.DAL.PostgreSQL.GlobalUsings.g.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Baby-goods.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

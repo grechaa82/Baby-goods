@@ -1,4 +1,5 @@
-﻿using Baby_goods.Common.Interfaces;
+﻿using Baby_goods.Common.Interfaces.Repositories;
+using Baby_goods.Common.Interfaces.Services;
 
 namespace Baby_goods.BL.Services
 {

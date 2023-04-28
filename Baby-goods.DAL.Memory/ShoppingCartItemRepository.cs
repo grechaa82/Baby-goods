@@ -1,4 +1,4 @@
-﻿using Baby_goods.Common.Interfaces;
+﻿using Baby_goods.Common.Interfaces.Repositories;
 using Baby_goods.Common.Models;
 
 namespace Baby_goods.DAL.Memory
