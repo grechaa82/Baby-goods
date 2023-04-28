@@ -1,24 +1,19 @@
 ﻿public class OrderItem
 {
     public Guid Id { get; }
-    public Order Order { get; }
+    public Guid OrderId { get; }
     public Product Product { get; }
     public int Quantity { get; }
     public decimal Price { get; }
     public DateTime CreatedAt { get; }
 
     public OrderItem(
-        Order order, 
+        Guid orderId, 
         Product product, 
         int quantity,
         decimal price,
         Guid id = new Guid())
     {
-        if (order == null)
-        {
-            throw new ArgumentNullException($"'{nameof(order)}' connot be null.");
-        }
-
         if (product == null)
         {
             throw new ArgumentNullException($"'{nameof(product)}' connot be null.");
@@ -30,7 +25,7 @@
         }
 
         Id = id;
-        Order = order;
+        OrderId = orderId;
         Product = product;
         Quantity = quantity;
         Price = price;

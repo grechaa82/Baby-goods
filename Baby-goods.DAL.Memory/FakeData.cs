@@ -74,5 +74,9 @@ namespace Baby_goods.DAL.Memory
             new ShoppingCartItem(user[0].Id, product[0], Guid.Parse("5E9F171E-0374-40D1-90CA-A240D974973E"), 2),
             new ShoppingCartItem(user[0].Id, product[1], Guid.Parse("FC2DC133-D902-4257-866B-6D6B47C2084D"))
         };
+
+        public static readonly List<OrderItem> orderItem = new();
+
+        public static readonly List<Order> order = new();
     }
 }

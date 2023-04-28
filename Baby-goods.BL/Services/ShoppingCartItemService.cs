@@ -16,13 +16,13 @@ namespace Baby_goods.BL.Services
 
         public async Task<List<ShoppingCartItem>> Get(string userId)
         {
-            return await _shoppingCartItemRepository.GetShoppingCartItems(userId);
+            return await _shoppingCartItemRepository.GetShoppingCartItemsByUserId(userId);
         }
 
         public async Task<int> GetNumberOfProducts(string userId)
         {
             var numberOfProducts = 0;
-            var shoppingCartItems = await _shoppingCartItemRepository.GetShoppingCartItems(userId);
+            var shoppingCartItems = await _shoppingCartItemRepository.GetShoppingCartItemsByUserId(userId);
 
             if (shoppingCartItems == null)
             {
@@ -41,7 +41,7 @@ namespace Baby_goods.BL.Services
         {
             var cost = 0m;
 
-            var shoppingCartItems = await _shoppingCartItemRepository.GetShoppingCartItems(userId);
+            var shoppingCartItems = await _shoppingCartItemRepository.GetShoppingCartItemsByUserId(userId);
 
             if (shoppingCartItems == null)
             {

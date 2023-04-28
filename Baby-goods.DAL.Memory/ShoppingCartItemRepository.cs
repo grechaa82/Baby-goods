@@ -5,7 +5,7 @@ namespace Baby_goods.DAL.Memory
 {
     public class ShoppingCartItemRepository : IShoppingCartItemRepository
     {
-        public async Task<List<ShoppingCartItem>> GetShoppingCartItems(string userId)
+        public async Task<List<ShoppingCartItem>> GetShoppingCartItemsByUserId(string userId)
         {
             var result = FakeData.shoppingCartItem.Where(s => s.UserId == Guid.Parse(userId)).ToList();
 
