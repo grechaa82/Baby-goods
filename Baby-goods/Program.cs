@@ -42,6 +42,8 @@ builder.Services.AddScoped<IShoppingCartItemService, ShoppingCartItemService>();
 builder.Services.AddScoped<IShoppingCartItemRepository, ShoppingCartItemRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAddressService, AddressService>();
+builder.Services.AddScoped<IAddressRepository, AddressRepository>();
 
 
 builder.Services.AddControllers();

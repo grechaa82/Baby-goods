@@ -17,7 +17,7 @@ namespace Baby_goods.DAL.Memory
             new Product(
                 category[2],
                 "Коляска Verdi 3 в 1",
-                "Verdi Sonic plus – модульная коляска 3 в 1, пришедшая на смену модели Verdi Sonic. Данная версия отличается усовершенствованным дизайном люльки и колес. Также она получила новую сумку для мамы и матрасик для люльки.", 
+                "Verdi Sonic plus – модульная коляска 3 в 1, пришедшая на смену модели Verdi Sonic. Данная версия отличается усовершенствованным дизайном люльки и колес. Также она получила новую сумку для мамы и матрасик для люльки.",
                 "",
                 40_840,
                 Guid.Parse("FC6C2F52-17A9-493A-A975-3C321A6B4A2C"),
@@ -62,6 +62,11 @@ namespace Baby_goods.DAL.Memory
         public static readonly List<User> user = new()
         {
             new User("Антонyc", "anton@gmail.com", "password", "Антон", "Назаров", "79998887766", Role.Customer, Guid.Parse("15A4937C-076D-4A30-9B3A-B745B87F68E0"))
+        };
+
+        public static readonly List<Address> address = new()
+        {
+            new Address(user[0], "Москва", "Россия", "Улица Красная", "Дом 96", "Квартира 02", "Вход через магазин с шариками",  Guid.Parse("FE2EC24B-532C-40F1-BDAB-52DEC3FA05CA"))
         };
 
         public static readonly List<ShoppingCartItem> shoppingCartItem = new()
