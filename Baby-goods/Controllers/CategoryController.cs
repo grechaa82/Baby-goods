@@ -21,7 +21,7 @@ namespace Baby_goods.Controllers
         }
 
         [HttpGet("{categoryId}")]
-        public async Task<IActionResult> Get(string categoryId)
+        public async Task<IActionResult> Get(Guid categoryId)
         {
             return Ok(await _categoryService.Get(categoryId));
         }

@@ -26,7 +26,7 @@ namespace Baby_goods.BL.Services
         {
             var user = await _userRepository.GetById(userId);
             var address = await _addressRepository.Get(addressId);
-            var shoppingCartItems = await _shoppingCartItemRepository.GetShoppingCartItemsByUserId(userId.ToString());
+            var shoppingCartItems = await _shoppingCartItemRepository.GetShoppingCartItemsByUserId(userId);
 
             var totalPrice = 0m;
             foreach (var item in shoppingCartItems)

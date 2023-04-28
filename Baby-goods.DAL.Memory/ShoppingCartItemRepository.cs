@@ -5,16 +5,16 @@ namespace Baby_goods.DAL.Memory
 {
     public class ShoppingCartItemRepository : IShoppingCartItemRepository
     {
-        public async Task<List<ShoppingCartItem>> GetShoppingCartItemsByUserId(string userId)
+        public async Task<List<ShoppingCartItem>> GetShoppingCartItemsByUserId(Guid userId)
         {
-            var result = FakeData.shoppingCartItem.Where(s => s.UserId == Guid.Parse(userId)).ToList();
+            var result = FakeData.shoppingCartItem.Where(s => s.UserId == userId).ToList();
 
             return result;
         }
         
-        public async Task<ShoppingCartItem> GetShoppingCartItemById(string userId)
+        public async Task<ShoppingCartItem> GetShoppingCartItemById(Guid userId)
         {
-            var result = FakeData.shoppingCartItem.FirstOrDefault(s => s.Id == Guid.Parse(userId));
+            var result = FakeData.shoppingCartItem.FirstOrDefault(s => s.Id == userId);
 
             return result;
         }
@@ -32,9 +32,9 @@ namespace Baby_goods.DAL.Memory
             }
         }
 
-        public async Task<bool> Delete(string shoppingCartItemId)
+        public async Task<bool> Delete(Guid shoppingCartItemId)
         {
-            var shoppingCartItem = FakeData.shoppingCartItem.First(s => s.Id == Guid.Parse(shoppingCartItemId));
+            var shoppingCartItem = FakeData.shoppingCartItem.First(s => s.Id == shoppingCartItemId);
 
             return FakeData.shoppingCartItem.Remove(shoppingCartItem);
         }

@@ -15,12 +15,12 @@ namespace Baby_goods.BL.Services
             _productRepository = productRepository;
         }
 
-        public async Task<List<ShoppingCartItem>> Get(string userId)
+        public async Task<List<ShoppingCartItem>> Get(Guid userId)
         {
             return await _shoppingCartItemRepository.GetShoppingCartItemsByUserId(userId);
         }
 
-        public async Task<int> GetNumberOfProducts(string userId)
+        public async Task<int> GetNumberOfProducts(Guid userId)
         {
             var numberOfProducts = 0;
             var shoppingCartItems = await _shoppingCartItemRepository.GetShoppingCartItemsByUserId(userId);
@@ -38,7 +38,7 @@ namespace Baby_goods.BL.Services
             return numberOfProducts;
         }
 
-        public async Task<decimal> GetCost(string userId)
+        public async Task<decimal> GetCost(Guid userId)
         {
             var cost = 0m;
 
@@ -57,7 +57,7 @@ namespace Baby_goods.BL.Services
             return cost;
         }
 
-        public async Task SetQuantity(string shoppingCartItemId, int quantity)
+        public async Task SetQuantity(Guid shoppingCartItemId, int quantity)
         {
             var shoppingCartItem = await _shoppingCartItemRepository.GetShoppingCartItemById(shoppingCartItemId);
 
@@ -74,16 +74,16 @@ namespace Baby_goods.BL.Services
             }
         }
 
-        public async Task<bool> Create(string productId, string userId)
+        public async Task<bool> Create(Guid productId, Guid userId)
         {
             var product = await _productRepository.GetById(productId);
 
-            var shoppingCartItem = new ShoppingCartItem(Guid.Parse(userId), product);
+            var shoppingCartItem = new ShoppingCartItem(userId, product);
 
             return await _shoppingCartItemRepository.Create(shoppingCartItem);
         }
 
-        public async Task<bool> Delete(string shoppingCartItemId)
+        public async Task<bool> Delete(Guid shoppingCartItemId)
         {
             return await _shoppingCartItemRepository.Delete(shoppingCartItemId);
         }

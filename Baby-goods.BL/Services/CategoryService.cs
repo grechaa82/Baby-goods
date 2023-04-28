@@ -17,7 +17,7 @@ namespace Baby_goods.BL.Services
             return await _categoryRepository.Get();
         }
 
-        public async Task<Category> Get(string categoryId)
+        public async Task<Category> Get(Guid categoryId)
         {
             var categoty = await _categoryRepository.GetById(categoryId);
             var subCategoties = await _categoryRepository.GetSubCategories(categoryId);

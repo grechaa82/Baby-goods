@@ -4,9 +4,9 @@ namespace Baby_goods.Common.Interfaces.Repositories
 {
     public interface IShoppingCartItemRepository
     {
-        Task<List<ShoppingCartItem>> GetShoppingCartItemsByUserId(string userId);
-        Task<ShoppingCartItem> GetShoppingCartItemById(string userId);
-        Task<bool> Delete(string shoppingCartItemId);
+        Task<List<ShoppingCartItem>> GetShoppingCartItemsByUserId(Guid userId);
+        Task<ShoppingCartItem> GetShoppingCartItemById(Guid userId);
+        Task<bool> Delete(Guid shoppingCartItemId);
         Task<bool> Create(ShoppingCartItem shoppingCartItem);
     }
 }

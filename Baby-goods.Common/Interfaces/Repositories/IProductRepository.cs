@@ -2,8 +2,8 @@
 {
     public interface IProductRepository
     {
-        Task<Product> GetById(string id);
-        Task<Product> GetByArticle(string id);
+        Task<Product> GetById(Guid id);
+        Task<Product> GetByArticle(string article);
         Task<List<Product>> GetByFilter(string? category, int[]? prices);
     }
 }

@@ -4,9 +4,9 @@ namespace Baby_goods.DAL.Memory
 {
     public class ProductRepository : IProductRepository
     {
-        public async Task<Product> GetById(string id)
+        public async Task<Product> GetById(Guid id)
         {
-            var result = FakeData.product.FirstOrDefault(p => p.Id == Guid.Parse(id));
+            var result = FakeData.product.FirstOrDefault(p => p.Id == id);
 
             return result;
         }

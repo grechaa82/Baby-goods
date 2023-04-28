@@ -15,7 +15,7 @@ namespace Baby_goods.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task <IActionResult> GetProductById(string id)
+        public async Task <IActionResult> GetProductById(Guid id)
         {
             var result = await _productService.GetById(id);
 

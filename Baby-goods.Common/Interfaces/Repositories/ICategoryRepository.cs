@@ -3,7 +3,7 @@
     public interface ICategoryRepository
     {
         Task<List<Category>> Get();
-        Task<Category> GetById(string categoryId);
-        Task<List<Category>> GetSubCategories(string categoryId);
+        Task<Category> GetById(Guid categoryId);
+        Task<List<Category>> GetSubCategories(Guid categoryId);
     }
 }

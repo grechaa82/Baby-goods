@@ -12,7 +12,7 @@ namespace Baby_goods.BL.Services
             _productRepository = productRepository;
         }
 
-        public async Task<Product> GetById(string id)
+        public async Task<Product> GetById(Guid id)
         {
             return await _productRepository.GetById(id);
         }

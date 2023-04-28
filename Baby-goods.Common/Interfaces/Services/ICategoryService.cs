@@ -3,6 +3,6 @@
     public interface ICategoryService
     {
         Task<List<Category>> Get();
-        Task<Category> Get(string categoryId);
+        Task<Category> Get(Guid categoryId);
     }
 }

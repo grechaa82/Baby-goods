@@ -11,16 +11,16 @@ namespace Baby_goods.DAL.Memory
             return result;
         }
 
-        public async Task<Category> GetById(string categoryId)
+        public async Task<Category> GetById(Guid categoryId)
         {
-            var result = FakeData.category.FirstOrDefault(c => c.Id == Guid.Parse(categoryId));
+            var result = FakeData.category.FirstOrDefault(c => c.Id == categoryId);
 
             return result;
         }
 
-        public async Task<List<Category>> GetSubCategories(string categoryId)
+        public async Task<List<Category>> GetSubCategories(Guid categoryId)
         {
-            var subCategories = FakeData.category.Where(c => c.ParentId == Guid.Parse(categoryId)).ToList();
+            var subCategories = FakeData.category.Where(c => c.ParentId == categoryId).ToList();
 
             return subCategories;
         }
