@@ -1,20 +1,20 @@
 ﻿public class Order
 {
     public Guid Id { get; }
-    public User User { get; }
-    public Address Address { get; }
+    public Guid UserId { get; }
+    public Guid AddressId { get; }
     public decimal TotalPrice { get; private set; }
     public DateTime CreatedAt { get; }
 
-    public Order( 
-        User user, 
-        Address address, 
+    public Order(
+        Guid userId,
+        Guid addressId, 
         decimal totalPrice,
         Guid id = new Guid())
     {
         Id = id;
-        User= user;
-        Address = address;
+        UserId = userId;
+        AddressId = addressId;
         TotalPrice = totalPrice; 
         CreatedAt = DateTime.UtcNow;
     }
