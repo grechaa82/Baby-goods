@@ -36,6 +36,8 @@ namespace Baby_goods.BL.Services
 
             var order = new Order(user.Id, address.Id, totalPrice);
 
+            await _orderRepository.CreateOrder(order);
+
             var orderItems = new List<OrderItem>();
 
             foreach (var item in shoppingCartItems)
@@ -44,8 +46,6 @@ namespace Baby_goods.BL.Services
                 orderItems.Add(orderItem);
                 await _orderRepository.CreateOrderItem(orderItem);
             }
-
-            await _orderRepository.CreateOrder(order);
         }
     }
 }

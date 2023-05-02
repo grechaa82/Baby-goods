@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  baby_goods_db:
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=baby_goods_db
+    image: postgres:15.2
+    ports:
+      - "5432:5432"
+  
+  baby_goods_db_pgadmin:
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=root@root.root
+      - PGADMIN_DEFAULT_PASSWORD=root
+    image: dpage/pgadmin4:6.21
+    ports:
+      - "5100:80"

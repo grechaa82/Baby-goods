@@ -12,6 +12,11 @@
         decimal totalPrice,
         Guid id = new Guid())
     {
+        if (id == Guid.Empty)
+        { 
+            id = Guid.NewGuid(); 
+        }
+
         Id = id;
         UserId = userId;
         AddressId = addressId;

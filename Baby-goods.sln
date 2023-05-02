@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baby-goods.DAL.PostgreSQL",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baby-goods.Common", "Baby-goods.Common\Baby-goods.Common.csproj", "{8272B820-7217-43E4-8432-028F7E42B314}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baby-goods.DAL.Memory", "Baby-goods.DAL.Memory\Baby-goods.DAL.Memory.csproj", "{A91B279B-7311-4B57-A9BA-2A3010BEE92D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Baby-goods.DAL.Memory", "Baby-goods.DAL.Memory\Baby-goods.DAL.Memory.csproj", "{A91B279B-7311-4B57-A9BA-2A3010BEE92D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0A21CC5-649B-4E80-95FD-3AA2B8A17103}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

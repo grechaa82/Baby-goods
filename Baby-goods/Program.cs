@@ -1,9 +1,11 @@
 using Baby_goods.BL.Services;
 using Baby_goods.Common.Interfaces.Repositories;
 using Baby_goods.Common.Interfaces.Services;
-using Baby_goods.DAL.Memory;
+using Baby_goods.DAL.PostgreSQL;
+using Baby_goods.DAL.PostgreSQL.Repositories;
 using Baby_goods.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -29,6 +31,11 @@ builder.Services.AddAuthentication(options =>
 });
 
 builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("JwtOptions"));
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+{
+    options.UseNpgsql(connectionString: builder.Configuration.GetConnectionString("DefaultConnection"));
+});
 
 // Add services to the container.
 builder.Services.AddScoped<IHomeService, HomeService>();
