@@ -8,5 +8,6 @@ namespace Baby_goods.Common.Interfaces.Repositories
         Task<ShoppingCartItem> GetShoppingCartItemById(Guid userId);
         Task<bool> Delete(Guid shoppingCartItemId);
         Task<bool> Create(ShoppingCartItem shoppingCartItem);
+        Task Update(ShoppingCartItem shoppingCartItem);
     }
 }

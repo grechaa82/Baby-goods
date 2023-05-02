@@ -1,12 +1,13 @@
 ﻿using Baby_goods.Common.Interfaces.Services;
 using Baby_goods.Contracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Baby_goods.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    //[Authorize]
+    [Authorize]
     public class AddressController : Controller
     {
         private readonly IAddressService _addressService;

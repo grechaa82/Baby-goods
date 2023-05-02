@@ -6,7 +6,7 @@
         public Guid UserId { get; }
         public Product Product { get; }
         public int Quantity { get; private set; }
-        public decimal Price { get; }
+        public decimal Price { get; private set; }
 
         public ShoppingCartItem(
             Guid userId,
@@ -34,6 +34,7 @@
             }
 
             Quantity = quantity;
+            Price = CalculatePrice();
         }
     }
 }

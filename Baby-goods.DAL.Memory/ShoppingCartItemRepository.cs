@@ -39,5 +39,9 @@ namespace Baby_goods.DAL.Memory
             return FakeData.shoppingCartItem.Remove(shoppingCartItem);
         }
 
+        public Task Update(ShoppingCartItem shoppingCartItem)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

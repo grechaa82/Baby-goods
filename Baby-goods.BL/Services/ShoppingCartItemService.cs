@@ -63,15 +63,7 @@ namespace Baby_goods.BL.Services
 
             shoppingCartItem.SetQuantity(quantity);
 
-            if (!await _shoppingCartItemRepository.Create(shoppingCartItem))
-            {
-                throw new Exception("Something went wrong");
-            }
-
-            if (!await _shoppingCartItemRepository.Delete(shoppingCartItemId))
-            {
-                throw new Exception("Something went wrong");
-            }
+            await _shoppingCartItemRepository.Update(shoppingCartItem);
         }
 
         public async Task<bool> Create(Guid productId, Guid userId)
